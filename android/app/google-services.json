@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774134893596",
+    "project_id": "elective-course-management",
+    "storage_bucket": "elective-course-management.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774134893596:android:70eca90052ec2f668de3d9",
+        "android_client_info": {
+          "package_name": "com.aric.elective_course_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYyUVeJ6NwP7AlL5IYJPmsbxMAA2WwO48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
