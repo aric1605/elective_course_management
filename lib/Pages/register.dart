@@ -1,5 +1,5 @@
 import 'package:elective_course_management/Constants/colors.dart';
-import 'package:elective_course_management/Controller/Auth_controller.dart';
+
 import 'package:elective_course_management/Widgets/already_have_account.dart';
 import 'package:elective_course_management/Widgets/email_widget.dart';
 import 'package:elective_course_management/Widgets/name_text_widget.dart';

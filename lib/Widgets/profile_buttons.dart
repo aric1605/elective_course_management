@@ -1,6 +1,5 @@
 import 'package:elective_course_management/Constants/profile_options.dart';
 import 'package:flutter/material.dart';
-import 'package:toastification/toastification.dart';
 
 import '../Constants/colors.dart';
 
@@ -14,7 +13,6 @@ class ProfileButtons extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    String a = profileOptionsVar.title;
     return InkWell(
       onTap: onTap,
       child: Row(

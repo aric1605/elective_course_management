@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elective_course_management/Modals/user.dart';
 import 'package:elective_course_management/Pages/MainActivity.dart';
-import 'package:elective_course_management/Pages/NavBar%20Pages/HomePage.dart';
 import 'package:elective_course_management/Pages/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
