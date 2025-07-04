@@ -2,25 +2,24 @@ import 'package:elective_course_management/Constants/colors.dart';
 import 'package:elective_course_management/Widgets/already_have_account.dart';
 import 'package:elective_course_management/Widgets/email_widget.dart';
 import 'package:elective_course_management/Widgets/password_widget.dart';
-import 'package:elective_course_management/Widgets/phone_textfield.dart';
 import 'package:elective_course_management/Widgets/phone_widget.dart';
 import 'package:elective_course_management/Widgets/remember_me_now.dart';
 import 'package:elective_course_management/Widgets/signup_button.dart';
 import 'package:elective_course_management/Widgets/text_field.dart';
-import 'package:fl_country_code_picker/fl_country_code_picker.dart';
+
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
-  const Register({super.key});
+  Register({super.key});
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
+  TextEditingController _rollController = new TextEditingController();
 
   @override
   State<Register> createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-  bool? isChecked = false;
-  final countryPicker = const FlCountryCodePicker();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,18 +62,28 @@ class _RegisterState extends State<Register> {
 
                           //Email Section
                           EmailWidget(),
-                          CustomTextField(hintText: "Email Address"),
+                          CustomTextField(
+                            hintText: "Email Address",
+                            controller: widget._emailController,
+                          ),
                           SizedBox(height: 15),
 
-                          //Phone Number Section
+                          //Roll Number Section
                           PhoneWidget(),
                           SizedBox(height: 8),
-                          PhoneTextfield(),
+                          CustomTextField(
+                            hintText: "Roll Number",
+                            controller: widget._rollController,
+                          ),
                           SizedBox(height: 15),
 
                           //Password Section
                           PasswordWidget(),
-                          CustomTextField(hintText: "Password"),
+                          CustomTextField(
+                            hintText: "Password",
+                            toHide: true,
+                            controller: widget._passwordController,
+                          ),
                           SizedBox(height: 15),
 
                           //Remember Me Now Section

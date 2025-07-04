@@ -8,7 +8,7 @@ class PhoneWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Phone Number",
+      "Roll Number",
       style: TextStyle(
         fontFamily: 'Manrope',
         color: CustomColor.registerButtonBackground,

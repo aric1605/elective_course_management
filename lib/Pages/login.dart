@@ -9,7 +9,9 @@ import 'package:flutter/material.dart';
 import '../Widgets/login_button.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  Login({super.key});
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
 
   @override
   State<Login> createState() => _LoginState();
@@ -60,12 +62,19 @@ class _LoginState extends State<Login> {
 
                           //Email Section
                           EmailWidget(),
-                          CustomTextField(hintText: "Email Address"),
+                          CustomTextField(
+                            hintText: "Email Address",
+                            controller: widget._emailController,
+                          ),
                           SizedBox(height: 15),
 
                           //Password Section
                           PasswordWidget(),
-                          CustomTextField(hintText: "Password"),
+                          CustomTextField(
+                            hintText: "Password",
+                            controller: widget._passwordController,
+                            toHide: true,
+                          ),
                           SizedBox(height: 15),
 
                           //Remember Me Now Section
