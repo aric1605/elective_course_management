@@ -5,20 +5,18 @@ import 'package:toastification/toastification.dart';
 import '../Constants/colors.dart';
 
 class ProfileButtons extends StatelessWidget {
-  const ProfileButtons({super.key, required this.profileOptionsVar});
+  const ProfileButtons({
+    super.key,
+    required this.profileOptionsVar,
+    required this.onTap,
+  });
   final profileOptions profileOptionsVar;
-
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     String a = profileOptionsVar.title;
     return InkWell(
-      onTap: () {
-        toastification.show(
-          context: context,
-          title: Text("You Pressed $a"),
-          autoCloseDuration: const Duration(seconds: 2),
-        );
-      },
+      onTap: onTap,
       child: Row(
         children: [
           Icon(

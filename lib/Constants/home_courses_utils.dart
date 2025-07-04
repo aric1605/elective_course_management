@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class HomeCoursesUtils {
   final String courseName;
   final String courseRating;

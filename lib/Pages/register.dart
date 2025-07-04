@@ -1,6 +1,8 @@
 import 'package:elective_course_management/Constants/colors.dart';
+import 'package:elective_course_management/Controller/Auth_controller.dart';
 import 'package:elective_course_management/Widgets/already_have_account.dart';
 import 'package:elective_course_management/Widgets/email_widget.dart';
+import 'package:elective_course_management/Widgets/name_text_widget.dart';
 import 'package:elective_course_management/Widgets/password_widget.dart';
 import 'package:elective_course_management/Widgets/phone_widget.dart';
 import 'package:elective_course_management/Widgets/remember_me_now.dart';
@@ -14,6 +16,7 @@ class Register extends StatefulWidget {
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
   TextEditingController _rollController = new TextEditingController();
+  TextEditingController _nameController = new TextEditingController();
 
   @override
   State<Register> createState() => _RegisterState();
@@ -60,6 +63,14 @@ class _RegisterState extends State<Register> {
                           ),
                           SizedBox(height: 40),
 
+                          //Name Section
+                          NameWidget(),
+                          CustomTextField(
+                            hintText: "Name",
+                            controller: widget._nameController,
+                          ),
+                          SizedBox(height: 15),
+
                           //Email Section
                           EmailWidget(),
                           CustomTextField(
@@ -91,7 +102,14 @@ class _RegisterState extends State<Register> {
                           SizedBox(height: 40),
 
                           //Sign Up Section
-                          SignupButton(buttonText: "Sign Up"),
+                          SignupButton(
+                            buttonText: "SignUp",
+                            emailController: widget._emailController,
+                            passwordController: widget._passwordController,
+                            nameController: widget._nameController,
+                            rollController: widget._rollController,
+                          ),
+
                           SizedBox(height: 30),
 
                           //Already Have Account Sectino

@@ -82,7 +82,11 @@ class _LoginState extends State<Login> {
                           SizedBox(height: 40),
 
                           //Login Section
-                          LoginButton(buttonText: "Login"),
+                          LoginButton(
+                            buttonText: "Login",
+                            emailController: widget._emailController,
+                            passwordController: widget._passwordController,
+                          ),
                           SizedBox(height: 30),
 
                           //Don't Have Account Sectino

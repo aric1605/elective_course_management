@@ -1,7 +1,9 @@
 import 'package:elective_course_management/Constants/profile_options.dart';
 import 'package:elective_course_management/Widgets/profile_buttons.dart';
 import 'package:elective_course_management/Widgets/profile_name.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -27,6 +29,19 @@ class ProfilePage extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 15),
                   child: ProfileButtons(
                     profileOptionsVar: profileOptionsList[i],
+                    onTap: () async {
+                      if (profileOptionsList[i].title.toLowerCase() ==
+                          "sign out") {
+                        try {
+                          await FirebaseAuth.instance.signOut();
+
+                          Navigator.pushReplacementNamed(context, '/login');
+                        } catch (e) {
+                          Get.snackbar("Error Occured:", e.toString());
+                          print(e.toString());
+                        }
+                      }
+                    },
                   ),
                 ),
             ],

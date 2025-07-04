@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
 import '../Constants/colors.dart';
+import '../Controller/Auth_controller.dart';
 
 class SignupButton extends StatelessWidget {
-  const SignupButton({super.key, required this.buttonText});
+  const SignupButton({
+    super.key,
+    required this.buttonText,
+    required this.emailController,
+    required this.passwordController,
+    required this.nameController,
+    required this.rollController,
+  });
   final String buttonText;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final TextEditingController nameController;
+  final TextEditingController rollController;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +27,12 @@ class SignupButton extends StatelessWidget {
         height: 45,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/home');
+            AuthController.instance.signUp(
+              nameController.text,
+              emailController.text,
+              passwordController.text,
+              rollController.text,
+            );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: CustomColor.registerButtonBackground,
