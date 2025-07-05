@@ -1,5 +1,4 @@
 import 'package:elective_course_management/Constants/categories_utils.dart';
-import 'package:elective_course_management/Constants/home_courses_utils.dart';
 import 'package:elective_course_management/Controller/course_Controller.dart';
 import 'package:elective_course_management/Widgets/categories_card.dart';
 import 'package:elective_course_management/Widgets/home_courses.dart';

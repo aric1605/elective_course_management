@@ -1,4 +1,3 @@
-import 'package:elective_course_management/Constants/course_details.dart';
 import 'package:flutter/material.dart';
 
 import '../Modals/course.dart';
