@@ -1,12 +1,15 @@
 import 'package:elective_course_management/Constants/categories_utils.dart';
 import 'package:elective_course_management/Constants/home_courses_utils.dart';
+import 'package:elective_course_management/Controller/course_Controller.dart';
 import 'package:elective_course_management/Widgets/categories_card.dart';
 import 'package:elective_course_management/Widgets/home_courses.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../Widgets/backgrounfWrapper.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  Homepage({super.key});
+  final CourseController courseController = Get.put(CourseController());
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +64,20 @@ class Homepage extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
                   // Vertical list of content
-                  for (int i = 0; i < 5; i++)
-                    HomeCourses(homeCoursesUtilsVar: homeCoursesUtilsList[i]),
+                  Obx(() {
+                    if (courseController.courses.isEmpty) {
+                      return Center(child: Text('No courses found.'));
+                    }
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: courseController.courses.length,
+                      itemBuilder: (context, index) {
+                        final course = courseController.courses[index];
+                        return HomeCourses(coursesVar: course);
+                      },
+                    );
+                  }),
                 ],
               ),
             ),

@@ -1,11 +1,10 @@
-import 'package:elective_course_management/Constants/course_details.dart';
-import 'package:elective_course_management/Constants/home_courses_utils.dart';
+import 'package:elective_course_management/Modals/course.dart';
 import 'package:elective_course_management/Pages/course_details_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeCourses extends StatelessWidget {
-  const HomeCourses({super.key, required this.homeCoursesUtilsVar});
-  final HomeCoursesUtils homeCoursesUtilsVar;
+  const HomeCourses({super.key, required this.coursesVar});
+  final Courses coursesVar;
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +13,7 @@ class HomeCourses extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => CourseDetailPage(
-              courseDetailsVar: courseDetail(
-                courseName: homeCoursesUtilsVar.courseName,
-                courseRating: homeCoursesUtilsVar.courseRating,
-                courseLearners: homeCoursesUtilsVar.courseLearners,
-                courseHours: homeCoursesUtilsVar.courseHours,
-                courseTeacher: homeCoursesUtilsVar.courseTeacher,
-                courseDifficulty: homeCoursesUtilsVar.courseDifficulty,
-              ),
-            ),
+            builder: (context) => CourseDetailPage(coursesVar: coursesVar),
           ),
         );
       },
@@ -42,7 +32,7 @@ class HomeCourses extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        homeCoursesUtilsVar.courseName,
+                        coursesVar.courseName,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
@@ -52,7 +42,7 @@ class HomeCourses extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            homeCoursesUtilsVar.courseRating,
+                            coursesVar.courseRating,
                             style: const TextStyle(fontSize: 15),
                           ),
                           const SizedBox(width: 8),
@@ -61,16 +51,13 @@ class HomeCourses extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        homeCoursesUtilsVar.courseLearners,
+                        coursesVar.courseLearners,
                         style: const TextStyle(fontSize: 15),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 80,
-                  child: Image.asset(homeCoursesUtilsVar.courseIcon),
-                ),
+                SizedBox(height: 80, child: Image.asset(coursesVar.courseIcon)),
               ],
             ),
           ),

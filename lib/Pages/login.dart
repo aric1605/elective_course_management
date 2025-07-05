@@ -4,14 +4,13 @@ import 'package:elective_course_management/Widgets/email_widget.dart';
 import 'package:elective_course_management/Widgets/password_widget.dart';
 import 'package:elective_course_management/Widgets/remember_me_now.dart';
 import 'package:elective_course_management/Widgets/text_field.dart';
-import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 import '../Widgets/login_button.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
-  TextEditingController _emailController = new TextEditingController();
-  TextEditingController _passwordController = new TextEditingController();
+  final TextEditingController _emailController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
 
   @override
   State<Login> createState() => _LoginState();
@@ -19,7 +18,6 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   bool? isChecked = false;
-  final countryPicker = const FlCountryCodePicker();
 
   @override
   Widget build(BuildContext context) {

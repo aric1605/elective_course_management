@@ -1,9 +1,11 @@
 import 'package:elective_course_management/Constants/course_details.dart';
 import 'package:flutter/material.dart';
 
+import '../Modals/course.dart';
+
 class CourseDetailPage extends StatelessWidget {
-  const CourseDetailPage({super.key, required this.courseDetailsVar});
-  final courseDetail courseDetailsVar;
+  const CourseDetailPage({super.key, required this.coursesVar});
+  final Courses coursesVar;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,7 @@ class CourseDetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      courseDetailsVar.courseName,
+                      coursesVar.courseName,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -50,9 +52,9 @@ class CourseDetailPage extends StatelessWidget {
                       children: [
                         Icon(Icons.star, color: Colors.amber, size: 16),
                         SizedBox(width: 4),
-                        Text(courseDetailsVar.courseRating),
+                        Text(coursesVar.courseRating),
                         SizedBox(width: 10),
-                        Text(courseDetailsVar.courseLearners),
+                        Text(coursesVar.courseLearners),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -70,7 +72,7 @@ class CourseDetailPage extends StatelessWidget {
                       children: [
                         Icon(Icons.person_outline),
                         SizedBox(width: 10),
-                        Text(courseDetailsVar.courseTeacher),
+                        Text(coursesVar.courseTeacher),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -79,7 +81,7 @@ class CourseDetailPage extends StatelessWidget {
                       children: [
                         Icon(Icons.schedule_outlined),
                         SizedBox(width: 10),
-                        Text(courseDetailsVar.courseHours),
+                        Text(coursesVar.courseHours),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -88,7 +90,7 @@ class CourseDetailPage extends StatelessWidget {
                       children: [
                         Icon(Icons.signal_cellular_alt_rounded),
                         SizedBox(width: 10),
-                        Text(courseDetailsVar.courseDifficulty),
+                        Text(coursesVar.courseDifficulty),
                       ],
                     ),
                     const SizedBox(height: 24),

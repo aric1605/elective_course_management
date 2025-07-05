@@ -13,7 +13,7 @@ class mainActivity extends StatefulWidget {
 class _MainActivityState extends State<mainActivity> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = const [Homepage(), MyCoursePage(), ProfilePage()];
+  final List<Widget> _pages = [Homepage(), MyCoursePage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
