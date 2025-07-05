@@ -10,7 +10,6 @@ class CourseController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     courses.bindStream(_getCourseDetails());
   }
