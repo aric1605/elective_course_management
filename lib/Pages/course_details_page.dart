@@ -99,12 +99,9 @@ class CourseDetailPage extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      "The Machine learning basics program is designed to offer a solid "
-                      "foundation & work-ready skills for ML engineers. The Machine "
-                      "learning basics program is designed to offer a solid foundation & "
-                      "work-ready skills for ML engineers.",
-                      style: TextStyle(height: 1.5),
+                    Text(
+                      style: const TextStyle(height: 1.5),
+                      coursesVar.courseDesc,
                     ),
                     const SizedBox(height: 8),
                     const Text(

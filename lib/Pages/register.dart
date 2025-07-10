@@ -13,10 +13,10 @@ import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
   Register({super.key});
-  TextEditingController _emailController = new TextEditingController();
-  TextEditingController _passwordController = new TextEditingController();
-  TextEditingController _rollController = new TextEditingController();
-  TextEditingController _nameController = new TextEditingController();
+  final TextEditingController _emailController = new TextEditingController();
+  final TextEditingController _passwordController = new TextEditingController();
+  final TextEditingController _rollController = new TextEditingController();
+  final TextEditingController _nameController = new TextEditingController();
 
   @override
   State<Register> createState() => _RegisterState();
